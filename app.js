@@ -14,6 +14,11 @@ const port = process.env.PORT;
 // Require Model
 const Users = require('./models/userSchema');
 
+// Get Data and Cookies from FrontEnd
+app.use(express.json());
+app.use(express.urlencoded({extended : false}));
+app.use(cookieParser());
+
 app.get('/', (req, res)=>{
     res.send("Hello World");
 })
@@ -44,7 +49,7 @@ app.post('/register', async (req, res)=>{
     }
 })
 
-app.listen(3001, ()=>{
+app.listen(port, ()=>{
     console.log("server is listening...")
 })
 
