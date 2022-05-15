@@ -14,6 +14,7 @@ const port = process.env.PORT;
 // Require Model
 const Users = require('./models/userSchema');
 const Message = require('./models/msgSchema');
+const authenticate = require('./middleware/authenticate')
 
 // Get Data and Cookies from FrontEnd
 app.use(express.json());
