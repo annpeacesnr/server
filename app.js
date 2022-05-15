@@ -115,6 +115,10 @@ app.get('/logout', (req, res)=>{
     res.status(200).send("User Logged Out")
 })
 
+//authentication
+app.get('/auth', authenticate, (req, res)=>{
+})
+
 //start server
 app.listen(port, ()=>{
     console.log("server is listening...")
